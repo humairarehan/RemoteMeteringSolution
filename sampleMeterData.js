@@ -1,10 +1,10 @@
-const csvFilePath = 'server/metering_data.csv'
+const path = require('path');
 const csv = require('csvtojson')
 var sampleData = [];
 const getMeterData = () => {
     return new Promise((resolve, reject) => {
         csv()
-            .fromFile(csvFilePath)
+            .fromFile(path.resolve(__dirname, "metering_data.csv"))
             .then((jsonObj) => {
                 //console.log(jsonObj);
                 /**
