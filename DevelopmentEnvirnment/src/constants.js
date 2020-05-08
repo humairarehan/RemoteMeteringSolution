@@ -1,0 +1,13 @@
+﻿const CONSTANTS = {};
+
+CONSTANTS.ERROR_MESSAGE = {};
+
+
+CONSTANTS.ERROR_MESSAGE.LIST_EMPTY_MESSAGE = "Please enter a valid meter serial number.";
+
+CONSTANTS.ENDPOINT = {};
+
+CONSTANTS.ENDPOINT.LIST = "/api/list";
+CONSTANTS.ENDPOINT.METERDETAILS = "/api/meterData";
+CONSTANTS.ENDPOINT.METERSERIALNUMBERS = "/api/meterSerialNumbers";
+export default CONSTANTS;
