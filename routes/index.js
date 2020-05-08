@@ -44,24 +44,27 @@ router.get(CONSTANTS.ENDPOINT.METERDETAILS + "/:_id", async function (req, res) 
     const xaxisresult = result.map(({ ReadingDateTimeUTC }) => ReadingDateTimeUTC)
     // console.log("xaxisresult", xaxisresult);
 
-    const yaxis1result = result.map(({ WH }) => Number(WH))
+    const yaxisWHresult = result.map(({ WH }) => Number(WH))
     // console.log("yaxis1result::", yaxis1result);
 
-    const y1 = diff(yaxis1result);
+    const WHresult = diff(yaxisWHresult);
+    let WHresultSum = WHresult.reduce((previous, current) => current += previous);
+    let WHresultAvg = WHresultSum / WHresult.length;
 
-    // xaxisresult.pop();
-    // xaxisresult.pop();
+
     xaxisresult.shift();
-    //  y1.shift();
-    // y1.pop();
-    // console.log("Y1", y1.length, y1[y1.length], y1[y1.length - 1], y1[y1.length - 2], y1[0], "xaxisresult", xaxisresult.length);
 
-    const yaxis2result = result.map(({ VARH }) => Number(VARH))
-    const y2 = diff(yaxis2result);
+    const yaxisVARHresult = result.map(({ VARH }) => Number(VARH))
+    const VARHresult = diff(yaxisVARHresult);
+    let VARHresultSum = VARHresult.reduce((previous, current) => current += previous);
+    let VARHresultAvg = VARHresultSum / VARHresult.length;
     const obj = {
+      serialnumber: _id,
       xaxis: xaxisresult,
-      yaxis1: y1,
-      yaxis2: y2
+      yaxisWHresult: WHresult,
+      yaxisVARHresult: VARHresult,
+      averageWH: WHresultAvg,
+      averageVARH: VARHresultAvg
     }
     console.log("Final return Object::", obj);
 
