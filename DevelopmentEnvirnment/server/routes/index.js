@@ -4,10 +4,7 @@ const sampleData = require("../sampleMeterData");
 
 
 const router = express.Router();
-// LIST ENDPOINTS
-router.get(CONSTANTS.ENDPOINT.LIST, function (req, res) {
-  res.json(sampleData.listTextAssets);
-});
+// Meter ENDPOINTS
 
 router.get(CONSTANTS.ENDPOINT.METERSERIALNUMBERS, async function (req, res) {
   sampleData.getMeterData().then((result) => {

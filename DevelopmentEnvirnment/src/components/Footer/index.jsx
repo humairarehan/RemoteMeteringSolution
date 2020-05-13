@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container-fluid">
         <div className="row justify-content-around">
           <div className="col-8 col-md-5">
-            <h5 className={styles.title}>Meterings Solution</h5>
+            <h5 className={styles.title}>Metering Solution</h5>
             <p className={styles.description}>
               Readings of WH and VARH
             </p>

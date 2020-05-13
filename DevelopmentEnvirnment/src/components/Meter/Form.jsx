@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import CONSTANTS from "../../constants";
@@ -19,7 +19,7 @@ const Form = (params) => {
 
   // const [textField, setTextField] = useState("");
   const [value, setValue] = useState("");
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue, setInputValue] = useState('');
   const [items, setItems] = useState([]);
   const [warningMessage, setWarningMessage] = useState({ warningMessageOpen: false, warningMessageText: "" });
   const handleSubmit = (e) => {
@@ -35,7 +35,7 @@ const Form = (params) => {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     getSerialNumbers()
       .then(serialnumbers => { setItems(serialnumbers) })
       .catch(error =>
