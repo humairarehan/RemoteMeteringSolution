@@ -1,0 +1,1 @@
+{"version":3,"sources":["warningmessage.module.css"],"names":[],"mappings":"AAAA,uCACE,wBAA0B,CAC1B,QAAS,CACT,MAAO,CACP,YACF","file":"4.d948069f.chunk.css","sourcesContent":[".warningPosition {\r\n  position: fixed !important;\r\n  bottom: 0;\r\n  left: 0;\r\n  z-index: 1030;\r\n}\r\n"]}
